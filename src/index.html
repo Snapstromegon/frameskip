@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Framskip</title>
+    <script src="./main.ts" type="module"></script>
+    <style>
+      html {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background: #fff;
+      }
+      .colorblock {
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+      }
+      .color {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>FPS Compare</h1>
+    <fps-manager></fps-manager>
+    <p>
+      This tool shows you how each frame is shown if you mix framerates in your
+      video.
+    </p>
+    <h2>Colors Explained</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="color"><span class="colorblock" style="background: #aaa"></span></td>
+          <td>Frame starts exactly with frame and is aligned</td>
+        </tr>
+        <tr>
+          <td class="color"><span class="colorblock" style="background: #00f"></span></td>
+          <td>Frame is skipped</td>
+        </tr>
+        <tr>
+          <td class="color"><span class="colorblock" style="background: #f00"></span></td>
+          <td>Frame is shown for more than one reference frame (doubling)</td>
+        </tr>
+        <tr>
+          <td class="color"><span class="colorblock" style="background: hsl(100deg, 100%, 50%)"></span> - <span class="colorblock" style="background: hsl(40deg, 100%, 50%)"></span></td>
+          <td>Frame is late (from green - on time to orange - just barely not skipped)</td>
+        </tr>
+        <tr>
+          <td class="color"><span class="colorblock" style="background: #000"></span></td>
+          <td>No Frame</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
